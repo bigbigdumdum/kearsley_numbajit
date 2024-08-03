@@ -2,7 +2,10 @@ import numpy as np
 import numpy.linalg as la
 from numba import njit
 
-'''Modified from https://github.com/martxelo/kearsley-algorithm/blob/main/kearsley/kearsley.py by Mukundan S'''
+'''
+Modified from https://github.com/martxelo/kearsley-algorithm/blob/main/kearsley/kearsley.py by Mukundan S
+Under MIT License, check repository for the LICENSE file
+'''
 
 centroid_u_ = np.empty(3,dtype=float)
 rot = np.empty((3,3),dtype=float)
