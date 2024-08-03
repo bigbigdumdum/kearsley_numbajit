@@ -57,3 +57,13 @@ transformed_v, rmsd , so, rotation, translation = fit_transform(u, v, so_dc)
 tra_v = transform(w,rotation,translation)
 ```
 
+# Packages and version used
+
+The following are the packages and version which this script was last tested with.
+```
+python = 3.12.2
+numpy = 1.26.4
+numba = 0.59.1
+```
+
+
