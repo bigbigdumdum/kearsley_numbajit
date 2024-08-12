@@ -42,7 +42,7 @@ from kearsley import fill_rot_and_trans
 centroid_u_ = np.empty(3,dtype=float)
 rotation = np.empty((3,3),dtype=float)
 
-rotation,translation = fill_rot_and_trans(q,centroid_u,centroid_v,rot,centroid_u_))
+rotation,translation = fill_rot_and_trans(q,centroid_u,centroid_v,rot,centroid_u_)
 ```
 If rotationand translation matrices are already computed transform function can transform an array of shape (M,3). Note that the M can be different to N. This function, for example, allows fitting a subset of coordinates and then applying that transformation to all coordinates.
 ```python3
