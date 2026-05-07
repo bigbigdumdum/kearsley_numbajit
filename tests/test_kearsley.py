@@ -3,12 +3,12 @@ import pytest
 
 
 def test_import():
-    from kearsley import fit, fit_transform, transform, fill_rot_and_trans
+    from kearsley_numba import fit, fit_transform, transform, fill_rot_and_trans
 
 
 def test_fit_transform_identity():
     """Fitting identical point sets should give RMSD ~ 0 and identity-like rotation."""
-    from kearsley import fit_transform
+    from kearsley_numba import fit_transform
 
     rng = np.random.default_rng(42)
     u = rng.random((10, 3))
@@ -22,7 +22,7 @@ def test_fit_transform_identity():
 
 def test_fit_transform_translation():
     """A pure translation should be recovered exactly."""
-    from kearsley import fit_transform
+    from kearsley_numba import fit_transform
 
     rng = np.random.default_rng(0)
     u = rng.random((20, 3))
@@ -36,7 +36,7 @@ def test_fit_transform_translation():
 
 
 def test_fit_returns_rmsd():
-    from kearsley import fit
+    from kearsley_numba import fit
 
     rng = np.random.default_rng(7)
     u = rng.random((15, 3))
@@ -53,7 +53,7 @@ def test_fit_returns_rmsd():
 
 def test_transform_different_size():
     """transform() should accept M != N."""
-    from kearsley import fit_transform, transform
+    from kearsley_numba import fit_transform, transform
 
     rng = np.random.default_rng(99)
     u = rng.random((10, 3))

@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "kearsley"
+name = "kearsley_numba"
 version = "0.1.0"
 description = "Fast Kearsley 3D superposition (RMSD minimization) using Numba JIT"
 readme = "README.md"
@@ -45,4 +45,4 @@ Repository = "https://github.com/bigbigdumdum/kearsley_numbajit"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["kearsley*"]
+include = ["kearsley_numba*"]

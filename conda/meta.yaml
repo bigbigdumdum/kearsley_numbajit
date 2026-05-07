@@ -1,4 +1,4 @@
-{% set name = "kearsley" %}
+{% set name = "kearsley_numba" %}
 {% set version = "0.1.0" %}
 
 package:
@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kearsley-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kearsley_numba-{{ version }}.tar.gz
   # Update sha256 after first PyPI upload:
   # sha256: <run `sha256sum` on the sdist tarball and paste here>
 
@@ -27,9 +27,9 @@ requirements:
 
 test:
   imports:
-    - kearsley_numbajit
+    - kearsley_numba
   commands:
-    - python -c "from kearsley import fit, fit_transform, transform, fill_rot_and_trans; print('OK')"
+    - python -c "from kearsley_numba import fit, fit_transform, transform, fill_rot_and_trans; print('OK')"
 
 about:
   home: https://github.com/bigbigdumdum/kearsley_numbajit
