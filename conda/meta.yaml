@@ -1,0 +1,42 @@
+{% set name = "kearsley" %}
+{% set version = "0.1.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kearsley-{{ version }}.tar.gz
+  # Update sha256 after first PyPI upload:
+  # sha256: <run `sha256sum` on the sdist tarball and paste here>
+
+build:
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python >=3.10
+    - pip
+    - setuptools >=68
+  run:
+    - python >=3.10
+    - numpy >=1.24
+    - numba >=0.57
+
+test:
+  imports:
+    - kearsley_numbajit
+  commands:
+    - python -c "from kearsley import fit, fit_transform, transform, fill_rot_and_trans; print('OK')"
+
+about:
+  home: https://github.com/bigbigdumdum/kearsley_numbajit
+  summary: Fast Kearsley 3D superposition (RMSD minimization) using Numba JIT
+  license: MIT
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - bigbigdumdum

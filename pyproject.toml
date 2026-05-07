@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kearsley"
+version = "0.1.0"
+description = "Fast Kearsley 3D superposition (RMSD minimization) using Numba JIT"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "bigbigdumdum" },
+]
+keywords = ["kearsley", "rmsd", "superposition", "numba", "structural-biology", "protein"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "numba>=0.57",
+    "scipy>=1.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-benchmark",
+    "build",
+    "twine",
+]
+
+[project.urls]
+Homepage = "https://github.com/bigbigdumdum/kearsley_numbajit"
+Repository = "https://github.com/bigbigdumdum/kearsley_numbajit"
+"Bug Tracker" = "https://github.com/bigbigdumdum/kearsley_numbajit/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["kearsley*"]
