@@ -12,6 +12,13 @@ This version: 9.62 µs ± 124 ns per loop (mean ± std. dev. of 7 runs, 100,000 
 
 A cpython implementation might be faster. 
 
+# Installation
+
+```
+pip install kearsley-numba
+```
+
+
 # Usage
 
 My application needed fit_tansform to also computer structure overlap, which is the percentage of atoms withing a distance cutoff.
