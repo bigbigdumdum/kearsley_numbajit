@@ -30,7 +30,7 @@ u,v = read_from_data()
 # so_dc is the distance cutoff used to compute structure overlap. Has to be a float. 
 so_dc = 1.0
 
-from kearsley import fit_transform
+from kearsley_numba import fit_transform
 
 # get cordinates of v transformedt to u, RMSD, SO, and the rotation and translation matrices as numpy arrays
 transformed_v, rmsd , so, rotation, translation = fit_transform(u, v, so_dc)
@@ -38,13 +38,13 @@ transformed_v, rmsd , so, rotation, translation = fit_transform(u, v, so_dc)
 If only rmsd needs to be computed
 
 ```python3
-from kearsley import fit
+from kearsley_numba import fit
 
 rmsd, q, centroid_u, centroid_v = fit(u, v)
 
 # rotation and translation matrices can be computed by
 
-from kearsley import fill_rot_and_trans
+from kearsley_numba import fill_rot_and_trans
 
 centroid_u_ = np.empty(3,dtype=float)
 rotation = np.empty((3,3),dtype=float)
@@ -53,7 +53,7 @@ rotation,translation = fill_rot_and_trans(q,centroid_u,centroid_v,rotation,centr
 ```
 If rotationand translation matrices are already computed transform function can transform an array of shape (M,3). Note that the M can be different to N. This function, for example, allows fitting a subset of coordinates and then applying that transformation to all coordinates.
 ```python3
-from kearsley import fit_transform,transform
+from kearsley_numba import fit_transform,transform
 
 u,v = read_from_data() # shape (N,3)
 w = read_all_cordinantes() # w is the superset of v. and is of the shape (M,3) M>N
